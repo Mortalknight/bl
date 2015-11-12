@@ -27,15 +27,15 @@ class champion {
     public var SPELL4 = 1;
     
     
-    function __Constrct() {
-        
+    function __Constrct() {        
     }
     
     //This champion takes damage
-   public function takeDamage($amount,$damageType)
+    // It takes a damageTabel as a argument where all the information on the damage is deffined
+   public function takeDamage($dT)
     {
         //Reduce damage depending on MAGIC_RESISTANCE or  ARMOR
-        $damageDelt = (damageType=='ATTACK_DAMAGE') ? armorMidigation($amount) ? magicMidigation($amount);
+        $damageDelt = ($dT.DAMAGE_TYPE=='ATTACK_DAMAGE') ? armorMidigation($dT.DAMAGE) ? magicMidigation($dT.DAMAGE);
         
         //make sure the damage isnt below 0
         if($damageDelt>0){
@@ -48,7 +48,7 @@ class champion {
             else {
                 //if the health is a killing blow health is 0
                 $health = 0;
-                killingBlow();
+                $this->killingBlow($dT);
             }
         }
         
@@ -82,7 +82,12 @@ class champion {
         
     }
     
-    
+    //Basic placeholder functions for things that will be triggerd in champions such as passive spells that trigger when dealing damage
+    public function onTakeDamage($me, $enemy,$dT){}
+    public function onDealDamage($me, $enemy,$dT){}
+    public function onKillingBlow($me, $enemy,$dT){}
+    public function onTakeHealing($me, $enemy,$dT){}
+       
 
 }
 ?>
