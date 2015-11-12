@@ -27,8 +27,12 @@ class champion {
     public var SPELL4 = 1;
     
     
+    function __Constrct() {
+        
+    }
+    
     //This champion takes damage
-    function takeDamage($amount,$damageType)
+   public function takeDamage($amount,$damageType)
     {
         //Reduce damage depending on MAGIC_RESISTANCE or  ARMOR
         $damageDelt = (damageType=='ATTACK_DAMAGE') ? armorMidigation($amount) ? magicMidigation($amount);
@@ -52,7 +56,7 @@ class champion {
         return $damageDelt;
     }
     //calculate the armor midigation
-    function armorMidigation($amount)
+   private function armorMidigation($amount)
     {
         //ARMOR value can never exceed 1.0 
         $armorValue = ARMOR / (100 + ARMOR);
@@ -62,8 +66,8 @@ class champion {
         return $damageAfterMidigation;
         
     }
-    
-    function magicMidigation($amount)
+    //calculate the magic midigation
+    private function magicMidigation($amount)
     {
          //MAGIC_RESISTANCE value can never exceed 1.0 
         $magicResistanceValue = MAGIC_RESISTANCE / (100 + MAGIC_RESISTANCE);
@@ -73,7 +77,7 @@ class champion {
         return $damageAfterMidigation;
     }
     
-    function killingBlow()
+    private function killingBlow()
     {
         
     }
