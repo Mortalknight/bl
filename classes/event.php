@@ -41,6 +41,26 @@ class event
     function doPlayerAction($me, $action,$enemy,$playerId)
     {
         //do propper actions for the player
+        
+        
+           // user cast spell example
+           // the action is between 1-4 so this is a sloted spell
+            if($action<5 && $action>0)
+            {
+                //spells are contained as variables named SPELL1 - SPELL4
+                // So merg the variable name and the action
+                $spellToGet = 'SPELL'.$action;
+                //now we get the spell from the champion
+                $spell = $me->$spellToGet;
+                //Create a new spell class
+                $spellTable = new spells();
+                //Execute the function for the spell 
+                $spellTable->$spell($me, $action,$enemy,$playerId);
+                
+            }
+        
+        
+        
     }
     
     
