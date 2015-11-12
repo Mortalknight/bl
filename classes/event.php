@@ -56,10 +56,13 @@ class event
                 $spellTable = new spells();
                 //Execute the function for the spell 
                 $spellTable->$spell($me, $action,$enemy,$playerId);
-                
             }
-        
-        
+            
+            //if action is between 5-7 we switch
+            if($action>4 && $action<8)
+            {
+                
+            }       
         
     }
     
