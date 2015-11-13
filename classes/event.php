@@ -2,8 +2,8 @@
 class event
 {
     //We hold the current active champion here
-    private  $PLAYER1_ACTIVE_CHAMPION;
-    private  $PLAYER2_ACTIVE_CHAMPION;
+    public  $PLAYER1_ACTIVE_CHAMPION;
+    public  $PLAYER2_ACTIVE_CHAMPION;
     
     //the action each player have choosen represented by a number
     //1-4 spells in slot 1-4

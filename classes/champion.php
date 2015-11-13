@@ -105,6 +105,23 @@ class champion {
     public function onDealDamage($me, $enemy,$dT){}
     public function onKillingBlow($me, $enemy,$dT){}
     public function onTakeHealing($me, $enemy,$dT){}
+    
+    
+    
+    //Create the champion from database data
+   function createChampion($data)
+   {
+       //loop trough every set in array
+        foreach($data as $key => $val)
+        {
+            //check if this class has a variable with the same name as the key in the array
+            if(property_exists ('champion', $key))
+            {
+                //if true we set this class variable with that name with the data from the database
+                $this->$key = $val;
+            }
+        }
+   }
        
 
 }
