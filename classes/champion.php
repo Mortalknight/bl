@@ -9,6 +9,11 @@ class champion {
     public $ATTACK_DAMAGE = 1.0;
     public $ABILITY_POWER = 1.0;
     
+    //the chance to land a critical strike 0.00 - 1.00
+    public $CRITICAL_HIT_CHANCE = 0.01;
+    //the multiplier for critical strikes
+    public $CRITICAL_HIT_DAMAGE = 2.0;
+    
     public $SPEED = 1.0;
     
     public $HEALTH = 1.0;
@@ -32,7 +37,7 @@ class champion {
     
     //This champion takes damage
     // It takes a damageTabel as a argument where all the information on the damage is deffined
-   public function takeDamage($dT)
+   public function takeDamage($from,$dT)
     {
         //Reduce damage depending on MAGIC_RESISTANCE or  ARMOR
         $damageDelt = ($dT->DAMAGE_TYPE=='ATTACK_DAMAGE') ? armorMidigation($dT->DAMAGE) : magicMidigation($dT->DAMAGE);
@@ -81,6 +86,19 @@ class champion {
     {
         
     }
+    //everytime this champion deal damage the damage should be calculated here to make sure criticals and such
+    public function dealDamage($dT)
+    {
+        //the ability multiplies the scaling factor by the type of damage 
+        $dT->DAMAGE = ($dT->DAMAGE_TYPE=='ATTACK_DAMAGE') ? $this->ATTACK_DAMAGE * $dT->SCALING : $this->ABILITY_POWER $dT->SCALING ;
+        //is this a critical strike?
+        $dT->CRITICAL = ((rand(1,100)/100)<$this->CRITICAL_HIT_CHANCE) ? true : false;
+        // if this is a critical strike we multiply it with the CRITICAL_HIT_DAMAGE multiplier
+        $dT->DAMAGE = ($dT->CRITICAL) ? $dT->DAMAGE * $this->CRITICAL_HIT_DAMAGE : $dT->DAMAGE;
+        //when we are done return the damageTabel for usage
+        return $dT;
+    }
+    
     
     //Basic placeholder functions for things that will be triggerd in champions such as passive spells that trigger when dealing damage
     public function onTakeDamage($me, $enemy,$dT){}
