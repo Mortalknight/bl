@@ -87,10 +87,10 @@ class champion {
         
     }
     //everytime this champion deal damage the damage should be calculated here to make sure criticals and such
-    public function dealDamage($dT)
+    public function dealDamage(damageTable $dT)
     {
         //the ability multiplies the scaling factor by the type of damage 
-        $dT->DAMAGE = ($dT->DAMAGE_TYPE=='ATTACK_DAMAGE') ? $this->ATTACK_DAMAGE * $dT->SCALING : $this->ABILITY_POWER $dT->SCALING ;
+        $dT->DAMAGE = ($dT->DAMAGE_TYPE=='ATTACK_DAMAGE') ? $this->ATTACK_DAMAGE * $dT->SCALING : $this->ABILITY_POWER * $dT->SCALING ;
         //is this a critical strike?
         $dT->CRITICAL = ((rand(1,100)/100)<$this->CRITICAL_HIT_CHANCE) ? true : false;
         // if this is a critical strike we multiply it with the CRITICAL_HIT_DAMAGE multiplier

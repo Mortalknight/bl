@@ -2,7 +2,7 @@
 //Handle server side events to readable format for the client
 class JSON {
     //Store all events in an array
-    private $EVENTS =new Array();
+    private $EVENTS;
 
     //adds a event
     // eventType is the decleration of what type of event accured eg "TAKE_DAMAGE"
@@ -13,7 +13,7 @@ class JSON {
     function addEvent($eventType,$parameters)
     {
         //create a new array to add to the current eventlist
-        $toAdd = new Array();
+        $toAdd = Array();
         //the key to the new item is the eventtype
         $toAdd[$eventType] = $parameters;
         //Add as a new item to the eventlist
