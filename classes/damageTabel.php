@@ -3,7 +3,7 @@ class damageTabel{
     
     /*
     
-    This is the class that gets passed to all functions that handels damage
+            This is the class that gets passed to all functions that handels damage
     
     */
     

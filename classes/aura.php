@@ -1,5 +1,10 @@
 <?php
-//Tabel for debuffs and buffs
+/*
+
+        This is the class for a buff or debuff
+        All information about the aura is stored here
+
+*/
 class aura{
     
     //Type of aura

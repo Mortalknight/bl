@@ -10,8 +10,8 @@
 
 
 $b =  new user_input();
-$p = $database->get("battle_champion", "*", [
-            "id" => 1
-        ]);
+$p = $database->get("battle_champion", "*", ["id" => 1]);
+
+
 $b->setPlayersActiveChampions($p);
 ?>

@@ -1,5 +1,10 @@
 <?php
-//This holds the functions for spells that can be triggred by the champions
+/*
+
+        Functions in this class should have a corresponding name to the spell that they are for 
+        spells with the name of exampleSpell will trigger the same function
+        
+*/
 class spells {
     
     //this represent a spell with the name of exampleSpell

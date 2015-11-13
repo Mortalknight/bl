@@ -1,5 +1,9 @@
 <?php
-//include libs
+/*
+
+        Global file includes and configs should be stored here
+        
+*/
 require_once('lib/medoo.php');
 
 

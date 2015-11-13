@@ -1,4 +1,10 @@
 <?php
+/*
+
+        This is the class that handles event such as player action and swap champion
+        It also stores the active champions
+        
+*/
 class event
 {
     //We hold the current active champion here

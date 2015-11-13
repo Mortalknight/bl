@@ -1,6 +1,14 @@
 <?php
-class champion {
 
+/*
+
+        This is the base class for a champion.
+        All information about a champion is stored here
+        
+*/
+
+class champion {
+    
     //CHAMPION DATA
     public $NAME = 'champion_name';
     public $LEVEL = 1;

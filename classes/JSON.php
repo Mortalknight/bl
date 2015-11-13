@@ -1,5 +1,10 @@
 <?php
-//Handle server side events to readable format for the client
+/*
+
+        This handles the data that should be sent between server and client
+        the data is sent in JSON-arrays
+        
+*/
 class JSON {
     //Store all events in an array
     private $EVENTS;
