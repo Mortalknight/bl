@@ -9,14 +9,14 @@ class damageTabel{
     
     
     //the amount of damage the abillity does
-    public var DAMAGE = 0;
+    public  $DAMAGE = 0;
     //The multiplier for the abillity
-    public var SCALING = 0;
+    public  $SCALING = 0;
     //The type of damage the abillity does
-    public var DAMAGE_TYPE = 'ATTACK_DAMAGE';
+    public  $DAMAGE_TYPE = 'ATTACK_DAMAGE';
     // this is a criticalHit ?? De nada
-    public var CRITICAL = false;
+    public  $CRITICAL = false;
     //Can this abillity trigger lifesteal or onhit effects?
-    public var TRIGGER_SPELLEFFECT = false;
+    public  $TRIGGER_SPELLEFFECT = false;
 }
 ?>

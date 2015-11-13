@@ -2,29 +2,29 @@
 class champion {
 
     //CHAMPION DATA
-    public var NAME = 'champion_name';
-    public var LEVEL = 1;
+    public $NAME = 'champion_name';
+    public $LEVEL = 1;
     
     //CHAMPION STATS
-    public var ATTACK_DAMAGE = 1.0;
-    public var ABILITY_POWER = 1.0;
+    public $ATTACK_DAMAGE = 1.0;
+    public $ABILITY_POWER = 1.0;
     
-    public var SPEED = 1.0;
+    public $SPEED = 1.0;
     
-    public var HEALTH = 1.0;
-    public var MAX_HEALTH = 1.0;
+    public $HEALTH = 1.0;
+    public $MAX_HEALTH = 1.0;
     
-    public var ARMOR = 1.0;
-    public var MAGIC_RESISTANCE = 1.0;
+    public $ARMOR = 1.0;
+    public $MAGIC_RESISTANCE = 1.0;
     
-    public var LIFE_STEAL = 1.0;
-    public var LIFE_ON_HIT = 1.0;
+    public $LIFE_STEAL = 1.0;
+    public $LIFE_ON_HIT = 1.0;
     
     //CHAMPIONS ABILLITYS
-    public var SPELL1 = 1;
-    public var SPELL2 = 1;
-    public var SPELL3 = 1;
-    public var SPELL4 = 1;
+    public $SPELL1 = 1;
+    public $SPELL2 = 1;
+    public $SPELL3 = 1;
+    public $SPELL4 = 1;
     
     
     function __Constrct() {        
@@ -35,7 +35,7 @@ class champion {
    public function takeDamage($dT)
     {
         //Reduce damage depending on MAGIC_RESISTANCE or  ARMOR
-        $damageDelt = ($dT.DAMAGE_TYPE=='ATTACK_DAMAGE') ? armorMidigation($dT.DAMAGE) ? magicMidigation($dT.DAMAGE);
+        $damageDelt = ($dT->DAMAGE_TYPE=='ATTACK_DAMAGE') ? armorMidigation($dT->DAMAGE) : magicMidigation($dT->DAMAGE);
         
         //make sure the damage isnt below 0
         if($damageDelt>0){
